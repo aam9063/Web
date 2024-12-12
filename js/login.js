@@ -3,11 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginPopup = document.getElementById('loginPopup');
   const closeLoginFormBtn = document.getElementById('closeLoginFormBtn');
   const loginForm = document.getElementById('loginForm');
-  const logoutLink = document.getElementById('logoutLink');
   const mensajeContrasena = document.getElementById('mensajeContrasena');
+  const logoutPopup = document.getElementById('logoutPopup');
+  const confirmLogoutBtn = document.getElementById('confirmLogoutBtn');
+  const cancelLogoutBtn = document.getElementById('cancelLogoutBtn');
 
   openLoginFormBtn.addEventListener('click', () => {
-    loginPopup.style.display = 'block';
+    if (localStorage.getItem('usuario')) {
+      logoutPopup.style.display = 'block';
+    } else {
+      loginPopup.style.display = 'block';
+    }
   });
 
   closeLoginFormBtn.addEventListener('click', () => {
@@ -35,14 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  logoutLink.addEventListener('click', (e) => {
-    e.preventDefault();
+  confirmLogoutBtn.addEventListener('click', () => {
+    console.log("Botón de confirmación de cierre de sesión clicado");
     document.cookie = "usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     localStorage.removeItem('usuario');
     document.cookie = "intentos=0; path=/";
     mensajeContrasena.textContent = "Has cerrado sesión.";
     mensajeContrasena.style.color = "blue";
     openLoginFormBtn.textContent = "Iniciar Sesión";
+    logoutPopup.style.display = 'none';
+  });
+
+  cancelLogoutBtn.addEventListener('click', () => {
+    logoutPopup.style.display = 'none';
   });
 
   const usuario = getCookie('usuario');

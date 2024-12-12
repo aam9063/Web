@@ -64,38 +64,70 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    border: 2px solid #006600;
+    border: 2px solid #070707;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     padding: 20px;
     text-align: center;
-  }
-  
-  .popup-content2 {
+    width: 300px; /* Ajusta el ancho según sea necesario */
+}
+
+.popup-content2 {
     margin: 10px;
-  }
-  
-  .popup2 button {
-    background-color: #006600;
-    color: white;
+}
+
+.login-icon {
+  display: block;
+  margin: 0 auto 20px auto; 
+  width: 50px; 
+  height: 50px; 
+}
+
+.popup-content2 form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-content2 label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.popup-content2 input[type="text"],
+.popup-content2 input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup2 button {
+    background-color: #fffbcc;
+    color: #070707;
+    font-weight: bold;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
-  }
-  
-  .popup2 button:hover {
-    background-color: #004d00;
-  }
-  
-  #openLoginFormBtn {
+    width: 80%;
+    margin-top: 10px;
+}
+
+.popup2 button:hover {
+    background-color: #f1e883;
+}
+
+#openLoginFormBtn {
     position: fixed;
     top: 20px;
-    left: 20px; /* Cambiado a la izquierda */
+    left: 20px; 
     z-index: 100;
-    background-color: #333;
-    color: white;
+    background-color: #fffbcc;
+    color: rgb(15, 15, 15);
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
@@ -103,16 +135,16 @@ header {
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  #openLoginFormBtn:hover {
-    background-color: #555;
+}
+
+#openLoginFormBtn:hover {
+    background-color: #fffbcc;
     transform: scale(1.1);
-  }
-  
-  #openLoginFormBtn:focus {
+}
+
+#openLoginFormBtn:focus {
     outline: none;
-  }
+}
 
  
 
@@ -123,7 +155,7 @@ header {
     width: 120px;
     background-color: #f6f8f6; 
     border: 2px solid #f5f7f5; 
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
     font-family: Arial, sans-serif;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -186,12 +218,15 @@ nav a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .content2 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  border-radius: 10px;
+
 }
 
 .horarios {
@@ -299,7 +334,7 @@ border-radius: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    }
+}
 
 .calculadora-form button {
 display: block;
@@ -406,21 +441,24 @@ footer a {
 #toggleDarkModeBtn {
   position: fixed;
   top: 20px;
-  left: 150px; /* Ajusta la posición según sea necesario */
+  left: 180px; 
   z-index: 100;
-  background-color: #333;
-  color: white;
+  background-color: #fffbcc;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
-  font-size: 16px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, transform 0.3s;
 }
 
+#toggleDarkModeBtn img {
+  width: 15px; 
+  height: 15px; 
+}
+
 #toggleDarkModeBtn:hover {
-  background-color: #555;
+  background-color: #fffbcc;
   transform: scale(1.1);
 }
 
@@ -505,6 +543,34 @@ body.dark-mode .popup button {
 body.dark-mode .popup button:hover {
   background-color: #555;
 }
+
+/* Estilos para el modo oscuro */
+body.dark-mode .popup2 {
+  background-color: #1e1e1e;
+  border-color: #555;
+}
+
+body.dark-mode .popup-content2 {
+  color: #ffffff;
+}
+
+body.dark-mode .popup-content2 input[type="text"],
+body.dark-mode .popup-content2 input[type="password"] {
+  background-color: #333;
+  color: #ffffff;
+  border-color: #555;
+}
+
+body.dark-mode .popup2 button {
+  background-color: #fffbcc;
+  color: #050505;
+}
+
+body.dark-mode .popup2 button:hover {
+  background-color: #f3ea8c;
+}
+
+
 
 body.dark-mode footer {
   background-color: #070707;
